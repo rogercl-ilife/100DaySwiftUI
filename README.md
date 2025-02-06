@@ -3,6 +3,7 @@ https://www.hackingwithswift.com/100
 
 
 ## Days 1-12: Introduction to Swift
+### Day 1 – variables, simple data types, and string interpolation
 ```
 import UIKit
 
