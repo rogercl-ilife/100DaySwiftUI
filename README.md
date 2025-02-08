@@ -195,4 +195,5 @@ enum Planet: Int {
  */
 ```
 
+### Day 4 – Type annotations and checkpoint 2
 
