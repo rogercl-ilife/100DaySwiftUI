@@ -196,4 +196,48 @@ enum Planet: Int {
 ```
 
 ### Day 4 – Type annotations and checkpoint 2
+```
 
+let playerName: String = "Roy"
+var luckyNumber: Int = 13
+let pi: Double = 3.141
+var isAuthenticated: Bool = true
+
+var albums: [String] = ["Red", "Fearless"]
+var user: [String: String] = ["id": "@twostraws"]
+var books: Set<String> = Set(["The Bluest Eye", "Foundation", "Girl, Woman, Other"])
+
+// empty array of strings
+var teams: [String] = [String]()
+var cities: [String] = []
+var clues = [String]()
+
+// enum
+enum UIStyle {
+    case light, dark, system
+}
+
+var style = UIStyle.light
+style = .dark
+
+let username: String
+// lots of complex logic
+username = "@twostraws"
+// lots more complex logic
+print(username)
+
+// Arrays must always be specialized so they contain one specific type, and they have helpful functionality such as count, append(), and contains().
+
+// Dictionary must be specialized to have one specific type for key and another for the value, and have similar functionality to arrays, such as contains() and count.
+
+// Sets are really efficient at finding whether they contain a specific item.
+
+// Enums let us create our own simple types in Swift so that we can specify a range of acceptable values such as a list of actions the user can perform, the types of files we are able to write, or the types of notification to send to the user.
+
+// Practice
+let albums_2 = ["Red", "Fearless","Red"]
+print(albums_2.count)
+
+let albums_3 = Set(albums_2)
+print(albums_3.count)
+```
