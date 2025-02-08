@@ -1,8 +1,8 @@
 # Study material
-https://www.hackingwithswift.com/100
+https://www.hackingwithswift.com/100/swiftui
 
 
-## Days 1-12: Introduction to Swift
+## Days 1-12: Introduction to SwiftUI
 ### Day 1,2 – variables, simple data types, and string interpolation
 ```
 import UIKit
