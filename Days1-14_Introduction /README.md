@@ -608,3 +608,96 @@ for i in 1...100 {
     }
 }
 ```
+
+### Day 7 – Functions, parameters, and return values
+
+```
+import Foundation
+
+// function 1
+//=======================================================
+showWelcome()
+
+func showWelcome() {
+    print("Welcome to my app!")
+    print("By default This prints out a conversion")
+    print("chart from centimeters to inches, but you")
+    print("can also set a custom range if you want.")
+}
+
+
+// function 2
+//=======================================================
+printTimesTables(number: 5)
+
+
+func printTimesTables(number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+
+// function 3
+//=======================================================
+printTimesTables_2(number: 5, end: 20)
+
+func printTimesTables_2(number: Int, end: Int) {
+    for i in 1...end {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+// function 4
+//=======================================================
+func square(numbers: [Int]) {
+    for number in numbers {
+        let squared = number * number
+        print("\(number) squared is \(squared).")
+    }
+}
+square(numbers: [2, 3, 4])
+
+// function 5
+//=======================================================
+func rollDice() -> Int {
+    return Int.random(in: 1...6)
+}
+
+let result = rollDice()
+print(result)
+
+// function 6
+//=======================================================
+func areLettersIdentical(string1: String, string2: String) -> Bool {
+    let first = string1.sorted()
+    let second = string2.sorted()
+    return first == second
+}
+
+let re = areLettersIdentical(string1: "abc", string2: "bac")
+print(re)
+
+/* Both of following codes are good.
+ 
+func areLettersIdentical(string1: String, string2: String) -> Bool {
+    return string1.sorted() == string2.sorted()
+}
+ 
+func areLettersIdentical(string1: String, string2: String) -> Bool {
+     string1.sorted() == string2.sorted()
+ }
+*/
+
+// only one line inside func, it is fine without return
+func rollDice_2() -> Int {
+    Int.random(in: 1...6)
+}
+
+let re_2 = rollDice_2()
+print(re_2)
+
+func pythagoras(a: Double, b: Double) -> Double {
+    sqrt(a * a + b * b)
+}
+```
