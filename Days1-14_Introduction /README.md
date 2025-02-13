@@ -610,11 +610,10 @@ for i in 1...100 {
 ```
 
 ### Day 7 – Functions, parameters, and return values
-
 ```
 import Foundation
 
-// function 1
+// function - basic function
 //=======================================================
 showWelcome()
 
@@ -626,7 +625,7 @@ func showWelcome() {
 }
 
 
-// function 2
+// function - input number
 //=======================================================
 printTimesTables(number: 5)
 
@@ -638,7 +637,7 @@ func printTimesTables(number: Int) {
 }
 
 
-// function 3
+// function - input multiple values
 //=======================================================
 printTimesTables_2(number: 5, end: 20)
 
@@ -648,7 +647,7 @@ func printTimesTables_2(number: Int, end: Int) {
     }
 }
 
-// function 4
+// function - input array
 //=======================================================
 func square(numbers: [Int]) {
     for number in numbers {
@@ -658,7 +657,7 @@ func square(numbers: [Int]) {
 }
 square(numbers: [2, 3, 4])
 
-// function 5
+// function - return value
 //=======================================================
 func rollDice() -> Int {
     return Int.random(in: 1...6)
@@ -667,7 +666,7 @@ func rollDice() -> Int {
 let result = rollDice()
 print(result)
 
-// function 6
+// function - return value
 //=======================================================
 func areLettersIdentical(string1: String, string2: String) -> Bool {
     let first = string1.sorted()
@@ -689,6 +688,8 @@ func areLettersIdentical(string1: String, string2: String) -> Bool {
  }
 */
 
+// function - signle line function does not need return
+//=======================================================
 // only one line inside func, it is fine without return
 func rollDice_2() -> Int {
     Int.random(in: 1...6)
@@ -700,4 +701,99 @@ print(re_2)
 func pythagoras(a: Double, b: Double) -> Double {
     sqrt(a * a + b * b)
 }
+
+// function - return value
+//=======================================================
+func isUppercase(string: String) -> Bool {
+    string == string.uppercased()
+}
+
+// function - return multiple values
+//=======================================================
+func getUser() -> [String] {
+    ["Taylor", "Swift"]
+}
+
+
+let user = getUser()
+print("Name: \(user[0]) \(user[1])") 
+
+
+// function  - return dictionary
+//=======================================================
+let user2 = getUser2()
+print("Name: \(user2["firstName", default: "Anonymous"]) \(user2["lastName", default: "Anonymous"])") 
+
+func getUser2() -> [String: String] {
+    [
+        "firstName": "Taylor",
+        "lastName": "Swift"
+    ]
+}
+
+// function  - return tuple
+//=======================================================
+func getUser3() -> (firstName: String, lastName: String) {
+    (firstName: "Taylor", lastName: "Swift")
+}
+
+let user3 = getUser3()
+print("Name: \(user3.firstName) \(user3.lastName)")
+
+
+//First, if you’re returning a tuple from a function, 
+// Swift already knows the names you’re giving each item in the tuple, 
+// so you don’t need to repeat them when using return. So, this code does the same thing as our previous tuple:
+func getUser4() -> (firstName: String, lastName: String) {
+    ("Taylor", "Swift")
+}
+
+func getUser5() -> (String, String) {
+    ("Taylor", "Swift")
+}
+
+let user5 = getUser5()
+print("Name: \(user5.0) \(user5.1)")
+
+
+// pull apart the return value from getUser() into two separate constants
+func getUser6() -> (firstName: String, lastName: String) {
+    (firstName: "Taylor", lastName: "Swift")
+}
+
+let (firstName6, lastName6) = getUser6()
+print("Name: \(firstName6) \(lastName6)")
+
+// using _ to tell Swift to ignore that part of the tuple:
+let (firstName7, _) = getUser6()
+print("Name: \(firstName7)")
+
+// function  - same func name
+//=======================================================
+func hireEmployee(name: String) { }
+func hireEmployee(title: String) { }
+func hireEmployee(location: String) { }
+
+// external name example
+let lyric = "I see a red door and I want it painted black"
+print(lyric.hasPrefix("I see"))
+
+// function  - no need to put input parameter name by using _
+//=======================================================
+func isUppercase(_ string: String) -> Bool {
+    string == string.uppercased()
+}
+
+let string = "HELLO, WORLD"
+let result2 = isUppercase(string)
+
+// function  - external name and internal name
+//=======================================================
+func printTimesTables(for number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+printTimesTables(for: 5)
 ```
