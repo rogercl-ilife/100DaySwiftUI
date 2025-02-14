@@ -797,3 +797,77 @@ func printTimesTables(for number: Int) {
 
 printTimesTables(for: 5)
 ```
+
+### Day 8 – Default values, throwing functions, and checkpoint 4
+```
+// Function with default value
+//===========================================
+func printTimesTables(for number: Int, end: Int = 12) {
+    for i in 1...end {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+printTimesTables(for: 5, end: 20)
+printTimesTables(for: 8)
+
+// removeAll function
+//===========================================
+var characters = ["Lana", "Pam", "Ray", "Sterling"]
+print(characters.count)
+characters.removeAll()
+print(characters.count)
+
+// keep capacity, only remove content
+characters.removeAll(keepingCapacity: true)
+
+
+// function with throws
+//===========================================
+enum PasswordError: Error {
+    case short, obvious
+}
+
+func checkPassword(_ password: String) throws -> String {
+    if password.count < 5 {
+        throw PasswordError.short
+    }
+
+    if password == "12345" {
+        throw PasswordError.obvious
+    }
+
+    if password.count < 8 {
+        return "OK"
+    } else if password.count < 10 {
+        return "Good"
+    } else {
+        return "Excellent"
+    }
+}
+
+
+// try / catch 
+//===========================================
+let string = "12345"
+
+do {
+    let result = try checkPassword(string)
+    print("Password rating: \(result)")
+} catch {
+    print("There was an error.")
+}
+
+// differentiate errors
+//===========================================
+do {
+    let result2 = try checkPassword(string)
+    print("Password rating: \(result2)")
+} catch PasswordError.short {
+    print("Please use a longer password.")
+} catch PasswordError.obvious {
+    print("I have the same combination on my luggage!")
+} catch {
+    print("There was an error.")
+}
+```
